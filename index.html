@@ -165,7 +165,7 @@
     /* ── HERO ───────────────────────────────────────── */
     .hero-section {
       min-height: 100vh; display: flex; align-items: center; justify-content: center;
-      padding: 8rem 4rem 4rem; position: relative; z-index: 1; overflow: hidden;
+      padding: 8rem 4rem 4rem; position: relative; z-index: 1; overflow: hidden; overflow-y: auto;
       background: var(--sc-bg);
     }
     .hero-inner { position: relative; z-index: 10; text-align: center; max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
@@ -191,7 +191,17 @@
     }
     .hero-name-outline {
       -webkit-text-stroke: 1px rgba(255,255,255,0.28);
-      color: transparent; display: block;
+      color: transparent;
+      display: block;
+      margin-left: -2ch; /* desktop offset */
+    }
+
+    /* Mobile fix */
+    @media (max-width: 768px) {
+      .hero-name-outline {
+        margin-left: 0;
+        text-align: center;
+      }
     }
 
     /* Glitch */
@@ -525,7 +535,7 @@
         <h1 class="hero-name reveal">
           <span class="glitch-text" data-text="SHIVAM">SHIVAM</span>
           <span> </span>
-          <span class="hero-name-outline" style="display:block; margin-left:-2ch;">CHAUDHARY</span>
+          <span class="hero-name-outline">CHAUDHARY</span>
         </h1>
         <p class="hero-desc reveal">
           I build <strong>machine learning systems</strong> that solve real business problems &mdash; from predicting which airline customers are about to churn, to classifying credit risk at scale. 3+ years of end-to-end experience across <strong>aviation, finance, healthcare &amp; economic research</strong>. I don&rsquo;t just model data &mdash; I translate it into decisions stakeholders can act on.
